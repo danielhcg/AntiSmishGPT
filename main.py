@@ -1,7 +1,11 @@
-import openai 
+import openai, os
+from dotenv import load_dotenv
+
+#load environment variable from .env 
+load_dotenv()
 
 #initializing personal key
-openai.api_key = '[insert api key here]'
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 def detect(sender, body):
     try:
@@ -31,7 +35,7 @@ SMS Body: {body}
         print(output)
 
     except Exception as error:
-        print("error:", str(error))
+        print("you got an error bozo:", str(error))
 
 senderArg = "+1 (806) 224-7886"
 bodyArg = "wel01.us/r/rest05WELLS FARGO(CS):Profilelocked because of unusual activities, kindly restore.Reply STOP to unsubscribe"
