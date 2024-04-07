@@ -1,7 +1,7 @@
 import openai 
 
 #initializing personal key
-openai.api_key = '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'
+openai.api_key = '[insert api key here]'
 
 def detect(sender, body):
     try:
